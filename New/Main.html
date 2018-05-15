@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/Main_css.css" />
+  <script src="js/Main_js.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <style>
+    #article1 {
+      background-image: url("image/super_euro_beat.jpg");
+      background-repeat: no-repeat;
+    }
+
+    #article2 {
+      background-image: url("image/super_euro_beat2.jpg");
+      background-repeat: no-repeat;
+    }
+
+    #article3 {
+      background-image: url("image/super_euro_beat3.jpg");
+      background-repeat: no-repeat;
+    }
+  </style>
+  <script>
+    function fnMove(seq) {
+      var offset = $("#article" + seq).offset();
+      $('html, body').animate({
+        scrollTop: offset.top
+      }, 700);
+    }
+    window.onload = function() {
+      $(".box").each(function() {
+        $(this).on("mousewheel DOMMouseScroll", function(e) {
+          e.preventDefault();
+          var delta = 0;
+          if (!event) event = window.event;
+          if (event.wheelDelta) {
+            delta = event.wheelDelta / 120;
+            if (window.opera) delta = -delta;
+          } else if (event.detail) delta = -event.detail / 3;
+          var moveTop = null;
+          if (delta < 0) {
+            if ($(this).next() != undefined) {
+              moveTop = $(this).next().offset().top;
+            }
+          } else {
+            if ($(this).prev() != undefined) {
+              moveTop = $(this).prev().offset().top;
+            }
+          }
+          $("html,body").stop().animate({
+            scrollTop: moveTop + 'px'
+          }, {
+            duration: 800,
+            complete: function() {}
+          });
+        });
+      });
+    }
+  </script>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="head">
+      <hgroup>
+        <h1>
+        <a href="#">POTATO</a>
+        </h1>
+      </hgroup>
+      <nav class="headnav" id="headnav">
+        <ul class="navinnav">
+          <li onmouseover="mouse_over()" onmouseout="mouse_out()" onclick="fnMove('1')">
+            <a href="#" id="list1">
+                <span class="list_span1">
+                  Super
+                </span>
+              </a>
+          </li>
+          <li onmouseover="mouse_over1()" onmouseout="mouse_out1()" onclick="fnMove('2')">
+            <a href="#" id="list2">
+                <span class="list_span2">
+                  Euro
+                </span>
+              </a>
+          </li>
+          <li onmouseover="mouse_over2()" onmouseout="mouse_out2()" onclick="fnMove('3')">
+            <a href="#" id="list3">
+                <span class="list_span3">
+                  Beat
+                </span>
+              </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="body">
+      <div id="content">
+        <div id="article1" class="box">
+          <div id="body1">
+            <p><strong>HELLO WORLD!</strong></p>
+            <p><strong>Jquery</strong></p>
+            <p><strong>1POTATO1</strong></p>
+          </div>
+        </div>
+
+        <div id="article2" class="box">
+          <div id="body2">
+            <p><strong>Need For Speed</strong></p>
+            <p><strong>&</strong></p>
+            <p><strong>Initial D</strong></p>
+          </div>
+        </div>
+
+        <div id="article3" class="box">
+          <div id="body3">
+            <p><strong>HELLO WORLD!</strong></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

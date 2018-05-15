@@ -1,0 +1,118 @@
+a:link{color: white; text-decoration: none;}
+a:hover{color: white; text-decoration: none;}
+a:visited{color: white; text-decoration: none;}
+
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+hgroup{
+  float: left;
+
+
+}
+
+
+
+div.body{
+  display: block;
+}
+
+#headnav .navinnav{
+  float: right;
+  padding-right: 80px;
+}
+
+#headnav .navinnav li{
+  display: inline;
+  list-style: none;
+  padding-left: 60px;
+  padding-top: 10px;
+
+}
+
+hgroup h1{
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 200px;
+}
+
+
+.headnav ul{
+  padding-top: 50px;
+}
+
+.headnav ul li{
+  font-size: 20px;
+}
+
+.list_span1{
+  margin-left: 300px;
+}
+
+.list_span2{
+  margin-left: 50px;
+}
+
+.list_span3{
+  margin-left: 50px;
+}
+
+#content #first  {
+  color: white;
+}
+
+#article{
+  width: 967px;
+  padding: 0 0 171px 16px;
+  margin: 0 auto;
+}
+
+#article1{
+  height: 1080px;
+}
+
+#body1{
+  padding-top: 500px;
+}
+
+#body1 p{
+  font-size: 50px;
+  padding-left: 100px;
+  color: white;
+  float: left;
+  width: 100%;
+}
+
+#article2{
+  height: 1080px;
+}
+
+#body2{
+  padding-top: 200px;
+}
+
+#body2 p{
+  text-align: center;
+  font-size: 50px;
+  padding-top: 30px;
+  color: white;
+}
+
+#article3{
+  height: 1080px;
+}
+
+#body3{
+  padding-top: 200px;
+}
+
+#body3 p{
+  text-align: center;
+  font-size: 50px;
+  padding-top: 65px;
+  color: white;
+}
